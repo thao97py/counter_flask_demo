@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+</head>
+<body>
+    <h1>Counter</h1>
+    {% if count<2 %}
+    <p>1 time</p>
+    {% else: %}
+    <p>{{ count }} times</p>
+    {% endif %}
+    <!-- reload button and increment counter by 2 -->
+    <form action="/process" method='post'>
+        <input type="hidden" name="action" value='reload'>
+        <input type="submit" value='reload'> 
+    </form>
+    <!-- reset button and reset counter back to 1 -->
+    <form action="/process" method='post'>
+        <input type="hidden" name="action" value="reset">
+        <input type="submit" value="reset">
+    </form>
+</body>
+</html>
